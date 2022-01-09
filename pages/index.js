@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
-
+import { Grid } from 'gridjs-react';
+import "gridjs/dist/theme/mermaid.css";
 export default function Home({ isConnected }) {
   return (
     <div className="container">
@@ -8,7 +9,6 @@ export default function Home({ isConnected }) {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main>
         <h1 className="title">
           Welcome to <a href="https://nextjs.org">Next.js with MongoDB!</a>
@@ -26,7 +26,18 @@ export default function Home({ isConnected }) {
         <p className="description">
           Get started by editing <code>pages/index.js</code>
         </p>
-
+        <Grid
+          data={[
+            ['John', 'john@example.com'],
+            ['Mike', 'mike@gmail.com']
+          ]}
+          columns={['Name', 'Email']}
+          search={true}
+          pagination={{
+            enabled: true,
+            limit: 1,
+          }}
+        />
         <div className="grid">
           <a href="https://nextjs.org/docs" className="card">
             <h3>Documentation &rarr;</h3>

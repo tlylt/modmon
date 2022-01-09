@@ -6,6 +6,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "gridjs": "^5.0.2",
+    "gridjs-react": "^5.0.2",
     "mongodb": "^4.1.3",
     "next": "latest",
     "react": "^17.0.2",
